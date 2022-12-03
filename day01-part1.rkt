@@ -1,9 +1,9 @@
 #lang racket
 ;; Day 1: Calorie Counting
 
-(let* ([input (port->string (current-input-port))]
+(let* ([input (port->string)]
        [calories (map
-                  (lambda (str) (map string->number (port->lines (open-input-string str))))
-                  (string-split input #px"\n\n"))]
-       [calory-sums (map (lambda (group) (apply + group)) calories)])
+                  (λ (str) (map string->number (string-split str "\n")))
+                  (string-split input "\n\n"))]
+       [calory-sums (map (λ (group) (apply + group)) calories)])
   (apply max calory-sums))

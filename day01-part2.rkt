@@ -1,5 +1,5 @@
 #lang racket
-;; Day 1: Calorie Counting
+;; Day 1: Calorie Counting - Part 2
 
 (let* ([input (port->string)]
        [calories (map
